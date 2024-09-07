@@ -7,5 +7,11 @@
   "item.jpy.500yen": "500 Yen Coin",
   "item.jpy.1000yen": "1000 Yen Bill",
   "item.jpy.5000yen": "5000 Yen Bill",
-  "item.jpy.10000yen": "10000 Yen Bill"
+  "item.jpy.10000yen": "10000 Yen Bill",
+  "item.jpy.1000yen.initial": "o",
+  "item.jpy.5000yen.initial": "f",
+  "item.jpy.10000yen.initial": "t",
+  "item.jpy.1000yen.plural": "1000 Yen Bills",
+  "item.jpy.5000yen.plural": "5000 Yen Bills",
+  "item.jpy.10000yen.plural": "10000 Yen Bills"
 }
