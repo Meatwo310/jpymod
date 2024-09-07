@@ -29,9 +29,9 @@ public class JPYMod {
 //    public static final RegistryObject<Item> YEN_50 = ITEMS.register("50yen", () -> new Item(new Item.Properties()));
 //    public static final RegistryObject<Item> YEN_100 = ITEMS.register("100yen", () -> new Item(new Item.Properties()));
 //    public static final RegistryObject<Item> YEN_500 = ITEMS.register("500yen", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> YEN_1000 = ITEMS.register("1000yen", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> YEN_5000 = ITEMS.register("5000yen", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> YEN_10000 = ITEMS.register("10000yen", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> YEN_1000 = ITEMS.register("1000yen", () -> new Item(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> YEN_5000 = ITEMS.register("5000yen", () -> new Item(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> YEN_10000 = ITEMS.register("10000yen", () -> new Item(new Item.Properties().fireResistant()));
 
     public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("jpy", () -> CreativeModeTab.builder()
             .title(Component.literal("JPY"))
