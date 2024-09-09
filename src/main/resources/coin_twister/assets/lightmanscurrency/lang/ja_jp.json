@@ -819,8 +819,8 @@
   "tooltip.lightmanscurrency.coinmint.mintable": "基本素材から硬貨を鋳造できる",
   "tooltip.lightmanscurrency.coinworth.down": "%2$s%1$s枚と等価",
   "tooltip.lightmanscurrency.coinworth.up": "%1$s枚で%2$s1枚と等価",
-  "tooltip.lightmanscurrency.coinworth.value": "%sの価値",
-  "tooltip.lightmanscurrency.coinworth.value.stack": "全体で%sの価値",
+  "tooltip.lightmanscurrency.coinworth.value": "%s分",
+  "tooltip.lightmanscurrency.coinworth.value.stack": "全体で%s分",
   "tooltip.lightmanscurrency.colored_item": "色: %s",
   "tooltip.lightmanscurrency.denied": "拒否",
   "tooltip.lightmanscurrency.disabled": "無効",
@@ -1061,5 +1061,9 @@
   "traderule.lightmanscurrency.timed_sale.info.sale": "タイムセール！ %1$s%%OFF！ 残り%2$s",
   "traderule.lightmanscurrency.trade_limit": "取引回数制限",
   "traderule.lightmanscurrency.trade_limit.denial": "この取引は既に%s回行われました",
-  "traderule.lightmanscurrency.trade_limit.info": "この取引は%1$s/%2$s回行われました"
+  "traderule.lightmanscurrency.trade_limit.info": "この取引は%1$s/%2$s回行われました",
+
+  "lightmanscurrency.money.chain.jpy": "JPY",
+  "lightmanscurrency.money.chain.jpy.display": "円",
+  "lightmanscurrency.money.chain.jpy.display.wordy": "円"
 }

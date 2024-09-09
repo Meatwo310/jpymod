@@ -89,5 +89,8 @@
   "item.lightmanscurrency.coin_netherite.initial": "n",
   "item.lightmanscurrency.coin_netherite.plural": "500円玉",
 
-  "enchantment.lightmanscurrency.coin_magnet.desc": "Disabled by server"
+  "enchantment.lightmanscurrency.coin_magnet.desc": "Disabled by server",
+  "lightmanscurrency.money.chain.jpy": "JPY",
+  "lightmanscurrency.money.chain.jpy.display": "yen",
+  "lightmanscurrency.money.chain.jpy.display.wordy": "yen"
 }
