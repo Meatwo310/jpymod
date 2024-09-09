@@ -24,7 +24,7 @@ public class ModEvent {
                 force,
                 (path) -> new PathPackResources(path, resourcePath, false),
                 PackType.CLIENT_RESOURCES,
-                force ? Pack.Position.TOP : Pack.Position.BOTTOM,
+                Pack.Position.TOP,
                 PackSource.BUILT_IN
         );
         event.addRepositorySource((packConsumer) -> packConsumer.accept(pack));
