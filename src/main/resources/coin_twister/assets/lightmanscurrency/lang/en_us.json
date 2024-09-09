@@ -91,6 +91,6 @@
 
   "enchantment.lightmanscurrency.coin_magnet.desc": "Disabled by server",
   "lightmanscurrency.money.chain.jpy": "JPY",
-  "lightmanscurrency.money.chain.jpy.display": "yen",
-  "lightmanscurrency.money.chain.jpy.display.wordy": "yen"
+  "lightmanscurrency.money.chain.jpy.display": "{value} yen",
+  "lightmanscurrency.money.chain.jpy.display.wordy": "{value} yen"
 }

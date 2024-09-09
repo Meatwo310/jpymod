@@ -1064,6 +1064,6 @@
   "traderule.lightmanscurrency.trade_limit.info": "この取引は%1$s/%2$s回行われました",
 
   "lightmanscurrency.money.chain.jpy": "JPY",
-  "lightmanscurrency.money.chain.jpy.display": "円",
-  "lightmanscurrency.money.chain.jpy.display.wordy": "円"
+  "lightmanscurrency.money.chain.jpy.display": "{value}円",
+  "lightmanscurrency.money.chain.jpy.display.wordy": "{value}円"
 }
