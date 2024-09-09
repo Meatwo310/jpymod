@@ -87,5 +87,7 @@
   "item.lightmanscurrency.coin_iron.plural": "5円玉",
   "item.lightmanscurrency.coin_netherite": "500円玉",
   "item.lightmanscurrency.coin_netherite.initial": "n",
-  "item.lightmanscurrency.coin_netherite.plural": "500円玉"
+  "item.lightmanscurrency.coin_netherite.plural": "500円玉",
+
+  "enchantment.lightmanscurrency.coin_magnet.desc": "Disabled by server"
 }

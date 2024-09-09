@@ -384,7 +384,7 @@
   "command.lightmanscurrency.ticket.color.not_held": "色を変更するには、チケットを手に持ってください",
   "curios.identifier.wallet": "財布",
   "enchantment.lightmanscurrency.coin_magnet": "貨幣マグネット",
-  "enchantment.lightmanscurrency.coin_magnet.desc": "財布がより広い範囲の貨幣を回収できるようにする",
+  "enchantment.lightmanscurrency.coin_magnet.desc": "このサーバーでは無効化されています",
   "enchantment.lightmanscurrency.money_mending": "貨幣修繕",
   "enchantment.lightmanscurrency.money_mending.desc": "アイテムを装備した財布のお金で修理する",
   "entity.minecraft.villager.lightmanscurrency.banker": "銀行家",
