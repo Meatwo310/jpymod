@@ -1,6 +1,6 @@
-package io.github.meatwo310.jpymod;
+package io.github.meatwo310.jpymod.event;
 
-import com.mojang.logging.LogUtils;
+import io.github.meatwo310.jpymod.JPYMod;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.PathPackResources;
@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 import java.nio.file.Path;
 
 @Mod.EventBusSubscriber(modid = JPYMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ModEvent {
+public class AddPackFindersRegisterer {
     private static void createAndAddPack(AddPackFindersEvent event, String modId, String resourcePathString, String packName, boolean force) {
         Path resourcePath = ModList.get().getModFileById(modId).getFile().findResource(resourcePathString);
         Pack pack = Pack.readMetaAndCreate(

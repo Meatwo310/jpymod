@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "jpy:item/500yen"
+    "layer0": "jpy:item/5000_casino_euro"
   }
 }

@@ -4,9 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -29,24 +27,40 @@ public class JPYMod {
 //    public static final RegistryObject<Item> YEN_50 = ITEMS.register("50yen", () -> new Item(new Item.Properties()));
 //    public static final RegistryObject<Item> YEN_100 = ITEMS.register("100yen", () -> new Item(new Item.Properties()));
 //    public static final RegistryObject<Item> YEN_500 = ITEMS.register("500yen", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> YEN_1000 = ITEMS.register("1000yen", () -> new Item(new Item.Properties().fireResistant()));
-    public static final RegistryObject<Item> YEN_5000 = ITEMS.register("5000yen", () -> new Item(new Item.Properties().fireResistant()));
-    public static final RegistryObject<Item> YEN_10000 = ITEMS.register("10000yen", () -> new Item(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> YEN_1000 = register("1000yen");
+    public static final RegistryObject<Item> YEN_5000 = register("5000yen");
+    public static final RegistryObject<Item> YEN_10000 = register("10000yen");
 
-    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("jpy", () -> CreativeModeTab.builder()
+    public static final RegistryObject<Item> USD_1_CENT = register("1_cent");
+    public static final RegistryObject<Item> USD_5_CENT = register("5_cent");
+    public static final RegistryObject<Item> USD_10_CENT = register("10_cent");
+    public static final RegistryObject<Item> USD_25_CENT = register("25_cent");
+    public static final RegistryObject<Item> USD_1_DOLLAR = register("1_dollar");
+    public static final RegistryObject<Item> USD_5_DOLLAR = register("5_dollar");
+    public static final RegistryObject<Item> USD_10_DOLLAR = register("10_dollar");
+    public static final RegistryObject<Item> USD_20_DOLLAR = register("20_dollar");
+    public static final RegistryObject<Item> USD_50_DOLLAR = register("50_dollar");
+    public static final RegistryObject<Item> USD_100_DOLLAR = register("100_dollar");
+    
+    public static final RegistryObject<Item> CASINO_1_EURO = register("1_casino_euro");
+    public static final RegistryObject<Item> CASINO_5_EURO = register("5_casino_euro");
+    public static final RegistryObject<Item> CASINO_10_EURO = register("10_casino_euro");
+    public static final RegistryObject<Item> CASINO_25_EURO = register("25_casino_euro");
+    public static final RegistryObject<Item> CASINO_50_EURO = register("50_casino_euro");
+    public static final RegistryObject<Item> CASINO_100_EURO = register("100_casino_euro");
+    public static final RegistryObject<Item> CASINO_500_EURO = register("500_casino_euro");
+    public static final RegistryObject<Item> CASINO_1000_EURO = register("1000_casino_euro");
+    public static final RegistryObject<Item> CASINO_5000_EURO = register("5000_casino_euro");
+    public static final RegistryObject<Item> CASINO_10000_EURO = register("10000_casino_euro");
+
+    public static final RegistryObject<CreativeModeTab> JPY_MOD_TAB = CREATIVE_MODE_TABS.register("jpy", () -> CreativeModeTab.builder()
             .title(Component.literal("JPY"))
             .icon(() -> YEN_1000.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-        //                output.accept(YEN_1.get());
-        //                output.accept(YEN_5.get());
-        //                output.accept(YEN_10.get());
-        //                output.accept(YEN_50.get());
-        //                output.accept(YEN_100.get());
-        //                output.accept(YEN_500.get());
-                output.accept(YEN_1000.get());
-                output.accept(YEN_5000.get());
-                output.accept(YEN_10000.get());
-            }).build());
+            .displayItems((parameters, output) -> ITEMS.getEntries().forEach(entry -> output.accept(entry.get().getDefaultInstance()))).build());
+
+    private static RegistryObject<Item> register(String name) {
+        return ITEMS.register(name, () -> new Item(new Item.Properties().fireResistant()));
+    }
 
     public JPYMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
