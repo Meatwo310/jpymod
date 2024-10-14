@@ -664,11 +664,11 @@
   "key.lightmanscurrency.portable_atm": "ATMタブレットにアクセス",
   "key.lightmanscurrency.portable_terminal": "ネットショッピングタブレットにアクセス",
   "lightmanscurrency.money.chain.chocolate_coins": "チョコレート",
-  "lightmanscurrency.money.chain.chocolate_coins.display": "{value}CC",
-  "lightmanscurrency.money.chain.chocolate_coins.display.wordy": "{value}チョコレート塊",
+  "lightmanscurrency.money.chain.chocolate_coins.display": "%sCC",
+  "lightmanscurrency.money.chain.chocolate_coins.display.wordy": "%sチョコレート塊",
   "lightmanscurrency.money.chain.emeralds": "エメラルド",
-  "lightmanscurrency.money.chain.emeralds.display": "{value}E",
-  "lightmanscurrency.money.chain.emeralds.display.wordy": "{value}エメラルド",
+  "lightmanscurrency.money.chain.emeralds.display": "%sE",
+  "lightmanscurrency.money.chain.emeralds.display.wordy": "%sエメラルド",
   "lightmanscurrency.money.chain.main": "JPY",
   "message.lightmanscurrency.cash_register.not_linked": "レジはショップにリンクされていません",
   "message.lightmanscurrency.coin_chest.protection.warning": "この金庫へアクセスする権限がありません",
@@ -1064,6 +1064,6 @@
   "traderule.lightmanscurrency.trade_limit.info": "この取引は%1$s/%2$s回行われました",
 
   "lightmanscurrency.money.chain.jpy": "JPY",
-  "lightmanscurrency.money.chain.jpy.display": "{value}円",
-  "lightmanscurrency.money.chain.jpy.display.wordy": "{value}円"
+  "lightmanscurrency.money.chain.jpy.display": "%s円",
+  "lightmanscurrency.money.chain.jpy.display.wordy": "%s円"
 }
