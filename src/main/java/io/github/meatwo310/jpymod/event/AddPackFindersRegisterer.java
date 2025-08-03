@@ -36,6 +36,7 @@ public class AddPackFindersRegisterer {
 
         createAndAddPack(event, "coin_twister", "LC日本円化テクスチャ", true);
         createAndAddPack(event, "coin_hardsmoothy", "LCユーロテクスチャ", true);
+        createAndAddPack(event, "coin_namahamu", "LCドルテクスチャ", true);
         createAndAddPack(event, "lc_jpy", "LC日本円化翻訳", true);
 
         createAndAddPack(event, "lc_alt/coin_chains", "LC硬貨代替パック", false);
