@@ -41,5 +41,6 @@ public class AddPackFindersRegisterer {
 
         createAndAddPack(event, "lc_alt/coin_chains", "LC硬貨代替パック", false);
         createAndAddPack(event, "lc_alt/coin_kagamimoti", "LC硬貨代替パック", false);
+        createAndAddPack(event, "lc_alt/coin_ne5", "LCドル代替パック", false);
     }
 }
