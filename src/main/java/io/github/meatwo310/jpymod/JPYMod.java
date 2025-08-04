@@ -1,6 +1,5 @@
 package io.github.meatwo310.jpymod;
 
-import com.mojang.logging.LogUtils;
 import io.github.meatwo310.jpymod.config.ClientConfig;
 import io.github.meatwo310.jpymod.config.ServerConfig;
 import net.minecraft.core.registries.Registries;
@@ -15,8 +14,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.slf4j.Logger;
 
+@SuppressWarnings("removal")
 @Mod(JPYMod.MODID)
 public class JPYMod {
     public static final String MODID = "jpy";

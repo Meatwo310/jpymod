@@ -10,15 +10,24 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.mojang.logging.LogUtils;
+import io.github.meatwo310.jpymod.JPYMod;
 import io.github.meatwo310.jpymod.config.ServerConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import org.slf4j.Logger;
+import top.theillusivec4.curios.api.CuriosApi;
 
 import javax.annotation.Nullable;
 
@@ -30,6 +39,12 @@ public class JPYCommand {
                     .literal("[JPY] ")
                     .withStyle(ChatFormatting.YELLOW)
             );
+
+    public static final String DEATH_HAMMER_OF_JUSTICE = "death.attack.jpy.hammer_of_justice";
+    public static final ResourceKey<DamageType> HAMMER_OF_JUSTICE = ResourceKey.create(
+            Registries.DAMAGE_TYPE,
+            ResourceLocation.fromNamespaceAndPath(JPYMod.MODID, "hammer_of_justice")
+    );
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("jpy")
@@ -51,6 +66,12 @@ public class JPYCommand {
                                         .executes(ctx -> executeCommand(ctx, JPYCommand::getSuffixOffline))
                                 )
                         )
+                )
+        );
+        dispatcher.register(Commands.literal("hammer")
+                .requires(stack -> stack.hasPermission(Commands.LEVEL_GAMEMASTERS))
+                .then(Commands.argument("player", EntityArgument.player())
+                        .executes(ctx -> executeCommand(ctx, JPYCommand::hammer))
                 )
         );
     }
@@ -152,5 +173,70 @@ public class JPYCommand {
         );
 
         return Command.SINGLE_SUCCESS;
+    }
+
+    private static int hammer(CommandContext<CommandSourceStack> ctx) throws CommandSyntaxException {
+        ServerPlayer player = EntityArgument.getPlayer(ctx, "player");
+        ServerLevel level = player.serverLevel();
+
+        DamageSource source = new DamageSource(level
+                .registryAccess()
+                .lookupOrThrow(Registries.DAMAGE_TYPE)
+                .getOrThrow(HAMMER_OF_JUSTICE)
+        );
+
+//        var curiosInventory = CuriosApi.getCuriosInventory(player);
+//        if (!curiosInventory.isPresent()) {
+//            kill(player, source, level);
+//            return Command.SINGLE_SUCCESS;
+//        }
+//
+//        Optional<ICurioStacksHandler> curiosHandler = curiosInventory
+//                .resolve()
+//                .orElseThrow()
+//                .getStacksHandler("heartamulet");
+//
+//        if (curiosHandler.isEmpty()) {
+//            kill(player, source, level);
+//            return Command.SINGLE_SUCCESS;
+//        }
+//
+//        curiosHandler.ifPresent(slotInventory -> {
+//            IDynamicStackHandler stacks = slotInventory.getStacks();
+//            ItemStack curio = stacks.extractItem(0, 1, false);
+//            kill(player, source, level);
+//            if (!curio.isEmpty()) stacks.insertItem(0, curio, false);
+//        });
+//
+//        return Command.SINGLE_SUCCESS;
+
+        boolean hasProcessedCurio = CuriosApi
+                .getCuriosInventory(player)
+                .map(inv -> inv
+                        .getStacksHandler("heartamulet")
+                        .map(slot -> {
+                            var stacks = slot.getStacks();
+                            var curio = stacks.extractItem(0, 1, false);
+                            kill(player, source, level);
+                            if (!curio.isEmpty()) {
+                                stacks.insertItem(0, curio, false);
+                            }
+                            return true;
+                        }).orElse(false)
+                ).orElse(false);
+
+        if (!hasProcessedCurio) {
+            kill(player, source, level);
+        }
+
+        return Command.SINGLE_SUCCESS;
+    }
+
+    private static void kill(ServerPlayer player, DamageSource source, ServerLevel level) {
+        player.setHealth(0F);
+        player.getCombatTracker().recordDamage(source, 0.0F);
+        player.die(source);
+
+        level.playSound(null, player, SoundEvents.ANVIL_LAND, player.getSoundSource(), 1.0F, 1.0F);
     }
 }

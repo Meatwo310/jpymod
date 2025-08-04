@@ -1,0 +1,7 @@
+{
+  "message_id": "jpy.hammer_of_justice",
+  "scaling": "never",
+  "exhaustion": 0.0,
+  "effects": "hurt",
+  "death_message_type": "default"
+}
