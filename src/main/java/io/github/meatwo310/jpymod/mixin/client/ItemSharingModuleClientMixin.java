@@ -29,6 +29,7 @@ public class ItemSharingModuleClientMixin {
     )
     private static void render(Minecraft mc, GuiGraphics guiGraphics, String before, float extraShift, float x, float y,
                                Style style, int color, CallbackInfo ci) {
+        if (!ClientConfig.MODIFY_SHARED_ITEM.get()) return;
         float xMove = ClientConfig.SHIFT_SHARED_ITEM_X.get().floatValue();
         float yMove = ClientConfig.SHIFT_SHARED_ITEM_Y.get().floatValue();
         float scale = ClientConfig.SCALE_SHARED_ITEM.get().floatValue();
