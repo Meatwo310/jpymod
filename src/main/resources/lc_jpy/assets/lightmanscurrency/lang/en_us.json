@@ -83,5 +83,17 @@
   "lightmanscurrency.money.chain.jpy": "JPY",
   "lightmanscurrency.money.chain.jpy.display": "%s yen",
   "lightmanscurrency.money.chain.jpy.display.wordy": "%s yen",
-  "lightmanscurrency.money.chain.main": "JPY"
+  "lightmanscurrency.money.chain.main": "JPY",
+
+  "lightmanscurrency.money.chain.euro": "Casino Euro",
+  "lightmanscurrency.money.chain.euro.display": "€%s",
+  "lightmanscurrency.money.chain.euro.display.wordy": "€%s",
+
+  "lightmanscurrency.money.chain.cent": "Cent",
+  "lightmanscurrency.money.chain.cent.display": "%s¢",
+  "lightmanscurrency.money.chain.cent.display.wordy": "%s¢",
+
+  "lightmanscurrency.money.chain.dollar": "Dollar",
+  "lightmanscurrency.money.chain.dollar.display": "$%s",
+  "lightmanscurrency.money.chain.dollar.display.wordy": "$%s"
 }

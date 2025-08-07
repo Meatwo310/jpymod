@@ -80,8 +80,23 @@
   "resourcepack.lightmanscurrency.fancy_icons.description": "このサーバーでは正常に機能しません",
   "enchantment.lightmanscurrency.coin_magnet.desc": "このサーバーでは無効化されています",
 
+  "tooltip.lightmanscurrency.coinworth.value": "%s",
+  "tooltip.lightmanscurrency.coinworth.value.stack": "全体で%s",
+
   "lightmanscurrency.money.chain.jpy": "JPY",
   "lightmanscurrency.money.chain.jpy.display": "%s円",
   "lightmanscurrency.money.chain.jpy.display.wordy": "%s円",
-  "lightmanscurrency.money.chain.main": "JPY"
+  "lightmanscurrency.money.chain.main": "JPY",
+
+  "lightmanscurrency.money.chain.euro": "カジノユーロ",
+  "lightmanscurrency.money.chain.euro.display": "€%s",
+  "lightmanscurrency.money.chain.euro.display.wordy": "€%s",
+
+  "lightmanscurrency.money.chain.cent": "セント",
+  "lightmanscurrency.money.chain.cent.display": "%s¢",
+  "lightmanscurrency.money.chain.cent.display.wordy": "%s¢",
+
+  "lightmanscurrency.money.chain.dollar": "ドル",
+  "lightmanscurrency.money.chain.dollar.display": "$%s",
+  "lightmanscurrency.money.chain.dollar.display.wordy": "$%s"
 }
