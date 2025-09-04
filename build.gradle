@@ -136,12 +136,12 @@ repositories {
         }
     }
 
-    maven {
-        url "https://cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
-    }
+//    maven {
+//        url "https://cursemaven.com"
+//        content {
+//            includeGroup "curse.maven"
+//        }
+//    }
 }
 
 dependencies {
@@ -167,21 +167,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
-    // Dependency from Modrinth
     implementation fg.deobf("maven.modrinth:lightmans-currency:1.20.1-2.2.5.0")
-    implementation fg.deobf("maven.modrinth:zeta:1.20.1-1.0-24")
-    implementation fg.deobf("maven.modrinth:quark:1.20.1-4.0-460")
-    runtimeOnly fg.deobf("maven.modrinth:tsuki-chat:forge-1.20.1-v1.3.2")
-    implementation fg.deobf("curse.maven:craterlib-867099:6347214")
-    implementation fg.deobf("curse.maven:simple-discord-link-bot-forge-fabric-spigot-541320:6362458")
-
-    runtimeOnly fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:6833927")
-    runtimeOnly fg.deobf("curse.maven:caelus-308989:5281700")
-    runtimeOnly fg.deobf("curse.maven:playeranimator-658587:4587214")
-    runtimeOnly fg.deobf("curse.maven:geckolib-388172:6789487")
-    implementation fg.deobf("curse.maven:curios-309927:6418456")
-
-    runtimeOnly fg.deobf("curse.maven:baubley-heart-canisters-282947:5918420")
 
     // Apply Mixin AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
