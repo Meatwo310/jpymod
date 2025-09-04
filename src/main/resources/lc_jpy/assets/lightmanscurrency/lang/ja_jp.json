@@ -77,9 +77,6 @@
   "item.lightmanscurrency.coin_netherite": "500円玉",
   "item.lightmanscurrency.coin_netherite.plural": "500円玉",
 
-  "resourcepack.lightmanscurrency.fancy_icons.description": "このサーバーでは正常に機能しません",
-  "enchantment.lightmanscurrency.coin_magnet.desc": "このサーバーでは無効化されています",
-
   "tooltip.lightmanscurrency.coinworth.value": "%s",
   "tooltip.lightmanscurrency.coinworth.value.stack": "全体で%s",
 

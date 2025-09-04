@@ -77,9 +77,6 @@
   "item.lightmanscurrency.coin_netherite": "500円玉",
   "item.lightmanscurrency.coin_netherite.plural": "500円玉",
 
-  "resourcepack.lightmanscurrency.fancy_icons.description": "Doesn't work properly on this server",
-  "enchantment.lightmanscurrency.coin_magnet.desc": "Disabled by server",
-
   "lightmanscurrency.money.chain.jpy": "JPY",
   "lightmanscurrency.money.chain.jpy.display": "%s yen",
   "lightmanscurrency.money.chain.jpy.display.wordy": "%s yen",

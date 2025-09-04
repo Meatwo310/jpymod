@@ -13,7 +13,6 @@ public class ModelGen {
 
     public static void register(boolean run, DataGenerator generator, PackOutput packOutput, ExistingFileHelper efh) {
         generator.addProvider(run, new ItemModel(packOutput, JPYMod.MODID, efh));
-//        generator.addProvider(run, new BlockModel(packOutput, CompressedCopper.MODID, efh));
     }
 
     private static class ItemModel extends ItemModelProvider {

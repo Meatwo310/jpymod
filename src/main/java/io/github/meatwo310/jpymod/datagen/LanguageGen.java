@@ -1,7 +1,6 @@
 package io.github.meatwo310.jpymod.datagen;
 
 import io.github.meatwo310.jpymod.JPYMod;
-import io.github.meatwo310.jpymod.command.JPYCommand;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
@@ -10,7 +9,6 @@ import net.minecraftforge.common.data.LanguageProvider;
 public class LanguageGen {
     public static void register(boolean run, DataGenerator generator) {
         generator.addProvider(run, (DataProvider.Factory<EnUs>) EnUs::new);
-        generator.addProvider(run, (DataProvider.Factory<JaJp>) JaJp::new);
     }
 
     private static class EnUs extends LanguageProvider {
@@ -45,18 +43,6 @@ public class LanguageGen {
             add(JPYMod.CASINO_1000_EURO.get(), "1000カジノユーロ");
             add(JPYMod.CASINO_5000_EURO.get(), "5000カジノユーロ");
             add(JPYMod.CASINO_10000_EURO.get(), "10000カジノユーロ");
-
-            add(JPYCommand.DEATH_HAMMER_OF_JUSTICE, "%1$s was struck down by the §aHammer of Justice§r");
-        }
-    }
-
-    private static class JaJp extends LanguageProvider {
-        public JaJp(PackOutput output) {
-            super(output, JPYMod.MODID, "ja_jp");
-        }
-        @Override
-        protected void addTranslations() {
-            add(JPYCommand.DEATH_HAMMER_OF_JUSTICE, "%1$sに§a正義の鉄槌§rが下された");
         }
     }
 }
