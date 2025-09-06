@@ -84,7 +84,6 @@ public class ForexScheduler {
 
     private static void run() {
         LogicalSidedProvider.WORKQUEUE.get(LogicalSide.SERVER).execute(() -> {
-            JsonObject jsonObject = null;
             try {
                 if (CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()) {
                     return;
@@ -95,7 +94,7 @@ public class ForexScheduler {
                         .build();
                 HttpResponse<String> response = CLIENT
                         .send(request, HttpResponse.BodyHandlers.ofString());
-                jsonObject = JsonParser.parseString(response.body()).getAsJsonObject();
+                JsonObject jsonObject = JsonParser.parseString(response.body()).getAsJsonObject();
                 String exchangeRate = jsonObject
                         .getAsJsonObject("Realtime Currency Exchange Rate")
                         .get("5. Exchange Rate")
