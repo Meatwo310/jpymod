@@ -1,5 +1,6 @@
 package io.github.meatwo310.jpymod;
 
+import io.github.meatwo310.jpymod.config.CommonConfig;
 import io.github.meatwo310.jpymod.config.ServerConfig;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -67,5 +68,6 @@ public class JPYMod {
         CREATIVE_MODE_TABS.register(modEventBus);
 
         ctx.registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC);
+        ctx.registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC);
     }
 }

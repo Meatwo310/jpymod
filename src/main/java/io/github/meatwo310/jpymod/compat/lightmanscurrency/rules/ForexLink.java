@@ -1,4 +1,4 @@
-package io.github.meatwo310.jpymod.compat.lightmanscurrency.rules.types;
+package io.github.meatwo310.jpymod.compat.lightmanscurrency.rules;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
@@ -11,7 +11,7 @@ import io.github.lightman314.lightmanscurrency.common.traders.rules.PriceTweakin
 import io.github.lightman314.lightmanscurrency.common.util.IconData;
 import io.github.lightman314.lightmanscurrency.common.util.IconUtil;
 import io.github.meatwo310.jpymod.JPYMod;
-import io.github.meatwo310.jpymod.compat.lightmanscurrency.client.rule_tabs.ForexLinkTab;
+import io.github.meatwo310.jpymod.config.CommonConfig;
 import io.github.meatwo310.jpymod.config.ServerConfig;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.ResourceLocationException;
@@ -35,9 +35,10 @@ public class ForexLink extends PriceTweakingTradeRule {
 
     @Override
     public void beforeTrade(TradeEvent.PreTradeEvent event) {
-        event.addHelpful(Component.literal("$1 = ¥%d (Price x%s)".formatted(
+        event.addHelpful(Component.literal("$1=¥%d (Price x%s)%s".formatted(
                 ServerConfig.FOREX_EXCHANGE_RATE.get(),
-                ServerConfig.FOREX_EXCHANGE_RATE.get() / 100.0
+                ServerConfig.FOREX_EXCHANGE_RATE.get() / 100.0,
+                CommonConfig.ALPHA_VANTAGE_API_KEY.get() == "" ? "" : " - Alpha Vantage API"
         )));
     }
 
