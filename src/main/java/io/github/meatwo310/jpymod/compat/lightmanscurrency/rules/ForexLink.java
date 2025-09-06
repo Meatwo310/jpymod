@@ -38,7 +38,7 @@ public class ForexLink extends PriceTweakingTradeRule {
         event.addHelpful(Component.literal("$1=¥%d (Price x%s)%s".formatted(
                 ServerConfig.FOREX_EXCHANGE_RATE.get(),
                 ServerConfig.FOREX_EXCHANGE_RATE.get() / 100.0,
-                CommonConfig.ALPHA_VANTAGE_API_KEY.get() == "" ? "" : " - Alpha Vantage API"
+                CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty() ? "" : " - Alpha Vantage API"
         )));
     }
 

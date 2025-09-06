@@ -26,9 +26,11 @@ import java.util.concurrent.TimeUnit;
 @Mod.EventBusSubscriber(modid = JPYMod.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ForexScheduler {
     public static final Logger LOGGER = LogUtils.getLogger();
-    private static ScheduledExecutorService forexScheduler = null;
+    public static final HttpClient CLIENT = HttpClient.newHttpClient();
     public static final String ALPHA_VANTAGE_URL =
             "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=JPY&apikey=";
+
+    private static ScheduledExecutorService forexScheduler = null;
 
     @SubscribeEvent
     public static void onServerStarted(ServerStartedEvent event) {
@@ -84,14 +86,14 @@ public class ForexScheduler {
         LogicalSidedProvider.WORKQUEUE.get(LogicalSide.SERVER).execute(() -> {
             JsonObject jsonObject = null;
             try {
-                if (CommonConfig.ALPHA_VANTAGE_API_KEY.get() == "") {
+                if (CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()) {
                     return;
                 }
 
                 HttpRequest request = HttpRequest.newBuilder()
                         .uri(URI.create(ALPHA_VANTAGE_URL + CommonConfig.ALPHA_VANTAGE_API_KEY.get()))
                         .build();
-                HttpResponse<String> response = HttpClient.newHttpClient()
+                HttpResponse<String> response = CLIENT
                         .send(request, HttpResponse.BodyHandlers.ofString());
                 jsonObject = JsonParser.parseString(response.body()).getAsJsonObject();
                 String exchangeRate = jsonObject

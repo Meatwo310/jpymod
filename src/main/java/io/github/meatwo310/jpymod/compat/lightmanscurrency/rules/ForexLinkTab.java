@@ -26,7 +26,7 @@ public class ForexLinkTab extends TradeRuleSubTab<ForexLink> {
                 ServerConfig.FOREX_EXCHANGE_RATE.get(),
                 ServerConfig.FOREX_EXCHANGE_RATE.get() / 100.0
         ), 10, 9, 0x404040);
-        if (CommonConfig.ALPHA_VANTAGE_API_KEY.get() != "") {
+        if (CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()) {
             gui.drawString("Alpha Vantage API enabled", 10, 20, 0x404040);
         }
     }
