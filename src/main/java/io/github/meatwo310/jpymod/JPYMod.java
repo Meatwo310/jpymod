@@ -1,17 +1,18 @@
 package io.github.meatwo310.jpymod;
 
+import io.github.meatwo310.jpymod.config.ServerConfig;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-@SuppressWarnings("removal")
 @Mod(JPYMod.MODID)
 public class JPYMod {
     public static final String MODID = "jpy";
@@ -60,9 +61,11 @@ public class JPYMod {
         return ITEMS.register(name, () -> new Item(new Item.Properties().fireResistant()));
     }
 
-    public JPYMod() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public JPYMod(FMLJavaModLoadingContext ctx) {
+        IEventBus modEventBus = ctx.getModEventBus();
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
+
+        ctx.registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC);
     }
 }
