@@ -18,7 +18,9 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Calendar;
+import java.time.Duration;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -41,19 +43,27 @@ public class ForexScheduler {
         shutdownScheduler();
         forexScheduler = Executors.newSingleThreadScheduledExecutor();
 
-        Calendar now = Calendar.getInstance();
-        int currentHour = now.get(Calendar.HOUR_OF_DAY);
+        // java.time APIを使用して次の実行時間を計算
+        ZonedDateTime now = ZonedDateTime.now();
 
-        Calendar nextRun = (Calendar) now.clone();
-        nextRun.set(Calendar.MINUTE, 0);
-        nextRun.set(Calendar.SECOND, 0);
-        nextRun.set(Calendar.MILLISECOND, 0);
-        nextRun.add(Calendar.HOUR_OF_DAY, (currentHour % 2 == 0) ? 1 : 2); // Schedule to the next odd hour
+        // 次の正時（例: 14:30 -> 15:00）を計算
+        ZonedDateTime nextHour = now.truncatedTo(ChronoUnit.HOURS).plusHours(1);
 
-        long initialDelay = nextRun.getTimeInMillis() - now.getTimeInMillis();
+        // 次の実行時間が奇数時になるように調整
+        ZonedDateTime nextRunTime;
+        if (nextHour.getHour() % 2 != 0) {
+            // 次の時間が奇数時なら、それが実行時間
+            nextRunTime = nextHour;
+        } else {
+            // 次の時間が偶数時なら、さらに1時間後（次の奇数時）が実行時間
+            nextRunTime = nextHour.plusHours(1);
+        }
+
+        // 現在時刻から次の実行時間までの遅延を計算
+        long initialDelay = Duration.between(now, nextRunTime).toMillis();
 
         LOGGER.info("Scheduling Forex scheduler: fetch in {} min, then every 2 hours", TimeUnit.MILLISECONDS.toMinutes(initialDelay));
-        if (CommonConfig.ALPHA_VANTAGE_API_KEY.get() == "") {
+        if (CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()) {
             LOGGER.warn("No Alpha Vantage API key provided. See the common config!");
         } else if (ServerConfig.FOREX_REFRESH_ON_STARTUP.get()) {
             LOGGER.info("Startup fetching!");
