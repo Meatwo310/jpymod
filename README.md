@@ -2,7 +2,10 @@
 Adds JPY items to Minecraft.
 Now supports dollars and euros!
 
-## Lightman's Currency Setup
-Copy `MasterCoinList.json` into your `config/lightmanscurrency` folder to enable JPY coins in Lightman's Currency.
+## Dependencies
+- Optional: [Lightman's Currency](https://www.curseforge.com/minecraft/mc-mods/lightmans-currency)
 
-Note: This template config and its schema is currently WIP!
+## Lightman's Currency Setup
+Copy `MasterCoinList.json` into your `config/lightmanscurrency/` folder to enable JPY coins in Lightman's Currency.
+
+Note: This config template and schema is currently WIP!
