@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Master Coin List Config",
+  "description": "Schema for Lightman's Currency MasterCoinList.json",
+  "type": "object",
+  "properties": {
+    "Chains": {
+      "description": "An array of coin chain definitions.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/chainEntry"
+      }
+    }
+  },
+  "required": [
+    "Chains"
+  ],
+  "$defs": {
+    "textComponent": {
+      "description": "Minecraft text component for formatting.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "translate": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "coinEntry": {
+      "description": "Defines a single coin item within a chain.",
+      "type": "object",
+      "properties": {
+        "Coin": {
+          "description": "The item ID of the coin. REQUIRED.",
+          "type": "string"
+        },
+        "exchangeRate": {
+          "description": "How many of the previous coin are needed for this coin. REQUIRED except for the first entry in CoreChain.",
+          "type": "number"
+        },
+        "ParentCoin": {
+          "description": "The item ID of the parent coin from the CoreChain. ONLY for the first entry of a SideChain.",
+          "type": "string"
+        },
+        "initial": {
+          "description": "A 1-2 character initial for the coin (for 'coin' displayType).",
+          "$ref": "#/$defs/textComponent"
+        },
+        "plural": {
+          "description": "Plural name of the coin (for 'coin' displayType).",
+          "$ref": "#/$defs/textComponent"
+        },
+        "baseUnit": {
+          "description": "Marks this coin as the base unit for value display (for 'number' displayType). Should only be true for one coin in a chain.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "Coin"
+      ]
+    },
+    "chainEntry": {
+      "description": "Defines a full coin chain, including its display properties and coins.",
+      "type": "object",
+      "properties": {
+        "chain": {
+          "description": "A unique ID for this coin chain. At least one must be 'main'. REQUIRED.",
+          "type": "string"
+        },
+        "name": {
+          "description": "The display name of the chain. REQUIRED.",
+          "$ref": "#/$defs/textComponent"
+        },
+        "displayType": {
+          "description": "The display type for this chain's values. REQUIRED.",
+          "type": "string",
+          "enum": [
+            "lightmanscurrency:coin",
+            "lightmanscurrency:number"
+          ]
+        },
+        "InputType": {
+          "description": "The input type for this coin chain. REQUIRED.",
+          "type": "string",
+          "enum": [
+            "DEFAULT",
+            "TEXT"
+          ]
+        },
+        "EventChain": {
+          "description": "If true, this chain is locked behind a server event. OPTIONAL.",
+          "type": "boolean"
+        },
+        "CoreChain": {
+          "description": "The main list of coins in this chain. MANDATORY.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/coinEntry"
+          },
+          "minItems": 1
+        },
+        "SideChains": {
+          "description": "Additional coin chains that branch off from the CoreChain. OPTIONAL.",
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/coinEntry"
+            }
+          }
+        },
+        "ATMData": {
+          "description": "Configuration for ATM exchange buttons for this chain. OPTIONAL.",
+          "type": "object"
+        }
+      },
+      "required": [
+        "chain",
+        "name",
+        "displayType",
+        "InputType",
+        "CoreChain"
+      ],
+      "if": {
+        "properties": {
+          "displayType": {
+            "const": "lightmanscurrency:number"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "displayFormat": {
+            "description": "The format for displaying numerical values. REQUIRED for 'number' displayType.",
+            "$ref": "#/$defs/textComponent"
+          },
+          "displayFormatWordy": {
+            "description": "An optional, more descriptive format for the Value Input widget. OPTIONAL.",
+            "$ref": "#/$defs/textComponent"
+          }
+        },
+        "required": [
+          "displayFormat"
+        ]
+      }
+    }
+  }
+}
