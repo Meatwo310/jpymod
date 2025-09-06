@@ -38,13 +38,13 @@
             "width": 80,
             "command": "exchangeAllUp",
             "icons": [
-              { "type": "lightmanscurrency:item", "x": 0, "y": 1, "item": "jpy:1_cent" },
-              { "type": "lightmanscurrency:small_arrow", "x": 14, "y": 6, "direction": "RIGHT" },
-              { "type": "lightmanscurrency:item", "x": 19, "y": 1, "item": "jpy:25_cent" },
-              { "type": "lightmanscurrency:small_arrow", "x": 34, "y": 6, "direction": "RIGHT" },
-              { "type": "lightmanscurrency:item", "x": 40, "y": 1, "item": "jpy:10_dollar" },
-              { "type": "lightmanscurrency:small_arrow", "x": 56, "y": 6, "direction": "RIGHT" },
-              { "type": "lightmanscurrency:item", "x": 62, "y": 1, "item": "jpy:100_dollar" }
+              { "x": 0, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:1_cent" },
+              { "x": 14, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 19, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:25_cent" },
+              { "x": 34, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 40, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:10_dollar" },
+              { "x": 56, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 62, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:100_dollar" }
             ]
           },
           {
@@ -53,29 +53,169 @@
             "width": 80,
             "command": "exchangeAllDown",
             "icons": [
-              { "type": "lightmanscurrency:item", "x": 2, "y": 1, "item": "jpy:100_dollar" },
-              { "type": "lightmanscurrency:small_arrow", "x": 18, "y": 6, "direction": "RIGHT" },
-              { "type": "lightmanscurrency:item", "x": 24, "y": 1, "item": "jpy:10_dollar" },
-              { "type": "lightmanscurrency:small_arrow", "x": 40, "y": 6, "direction": "RIGHT" },
-              { "type": "lightmanscurrency:item", "x": 45, "y": 1, "item": "jpy:25_cent" },
-              { "type": "lightmanscurrency:small_arrow", "x": 60, "y": 6, "direction": "RIGHT" },
-              { "type": "lightmanscurrency:item", "x": 64, "y": 1, "item": "jpy:1_cent" }
+              { "x": 2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:100_dollar" },
+              { "x": 18, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 24, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:10_dollar" },
+              { "x": 40, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 45, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:25_cent" },
+              { "x": 60, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 64, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:1_cent" }
             ]
           },
-          { "x": 5, "y": 43, "width": 26, "command": "exchangeDown-jpy:5_cent", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:5_cent" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:1_cent" } ] },
-          { "x": 38, "y": 43, "width": 26, "command": "exchangeDown-jpy:25_cent", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:25_cent" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:5_cent" } ] },
-          { "x": 71, "y": 43, "width": 26, "command": "exchangeDown-jpy:1_dollar", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:1_dollar" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:25_cent" } ] },
-          { "x": 5, "y": 64, "width": 26, "command": "exchangeDown-jpy:5_dollar", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:5_dollar" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:1_dollar" } ] },
-          { "x": 38, "y": 64, "width": 26, "command": "exchangeDown-jpy:10_dollar", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:10_dollar" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:5_dollar" } ] },
-          { "x": 71, "y": 64, "width": 26, "command": "exchangeDown-jpy:20_dollar", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:20_dollar" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:10_dollar" } ] },
-          { "x": 104, "y": 64, "width": 26, "command": "exchangeDown-jpy:100_dollar", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:100_dollar" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:20_dollar" } ] },
-          { "x": 5, "y": 87, "width": 26, "command": "exchangeUp-jpy:1_cent", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:1_cent" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:5_cent" } ] },
-          { "x": 38, "y": 87, "width": 26, "command": "exchangeUp-jpy:5_cent", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:5_cent" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:25_cent" } ] },
-          { "x": 71, "y": 87, "width": 26, "command": "exchangeUp-jpy:25_cent", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:25_cent" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:1_dollar" } ] },
-          { "x": 5, "y": 108, "width": 26, "command": "exchangeUp-jpy:1_dollar", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:1_dollar" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:5_dollar" } ] },
-          { "x": 38, "y": 108, "width": 26, "command": "exchangeUp-jpy:5_dollar", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:5_dollar" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:10_dollar" } ] },
-          { "x": 71, "y": 108, "width": 26, "command": "exchangeUp-jpy:10_dollar", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:10_dollar" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:20_dollar" } ] },
-          { "x": 104, "y": 108, "width": 26, "command": "exchangeUp-jpy:20_dollar", "icons": [ { "type": "lightmanscurrency:item", "x": -2, "y": 1, "item": "jpy:20_dollar" }, { "type": "lightmanscurrency:small_arrow", "x": 10, "y": 6, "direction": "RIGHT" }, { "type": "lightmanscurrency:item", "x": 12, "y": 1, "item": "jpy:100_dollar" } ] }
+          {
+            "x": 5,
+            "y": 43,
+            "width": 26,
+            "command": "exchangeDown-jpy:5_cent",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:5_cent" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:1_cent" }
+            ]
+          },
+          {
+            "x": 38,
+            "y": 43,
+            "width": 26,
+            "command": "exchangeDown-jpy:25_cent",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:25_cent" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:5_cent" }
+            ]
+          },
+          {
+            "x": 71,
+            "y": 43,
+            "width": 26,
+            "command": "exchangeDown-jpy:1_dollar",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:1_dollar" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:25_cent" }
+            ]
+          },
+          {
+            "x": 5,
+            "y": 64,
+            "width": 26,
+            "command": "exchangeDown-jpy:5_dollar",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:5_dollar" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:1_dollar" }
+            ]
+          },
+          {
+            "x": 38,
+            "y": 64,
+            "width": 26,
+            "command": "exchangeDown-jpy:10_dollar",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:10_dollar" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:5_dollar" }
+            ]
+          },
+          {
+            "x": 71,
+            "y": 64,
+            "width": 26,
+            "command": "exchangeDown-jpy:20_dollar",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:20_dollar" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:10_dollar" }
+            ]
+          },
+          {
+            "x": 104,
+            "y": 64,
+            "width": 26,
+            "command": "exchangeDown-jpy:100_dollar",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:100_dollar" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:20_dollar" }
+            ]
+          },
+          {
+            "x": 5,
+            "y": 87,
+            "width": 26,
+            "command": "exchangeUp-jpy:1_cent",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:1_cent" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:5_cent" }
+            ]
+          },
+          {
+            "x": 38,
+            "y": 87,
+            "width": 26,
+            "command": "exchangeUp-jpy:5_cent",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:5_cent" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:25_cent" }
+            ]
+          },
+          {
+            "x": 71,
+            "y": 87,
+            "width": 26,
+            "command": "exchangeUp-jpy:25_cent",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:25_cent" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:1_dollar" }
+            ]
+          },
+          {
+            "x": 5,
+            "y": 108,
+            "width": 26,
+            "command": "exchangeUp-jpy:1_dollar",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:1_dollar" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:5_dollar" }
+            ]
+          },
+          {
+            "x": 38,
+            "y": 108,
+            "width": 26,
+            "command": "exchangeUp-jpy:5_dollar",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:5_dollar" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:10_dollar" }
+            ]
+          },
+          {
+            "x": 71,
+            "y": 108,
+            "width": 26,
+            "command": "exchangeUp-jpy:10_dollar",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:10_dollar" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:20_dollar" }
+            ]
+          },
+          {
+            "x": 104,
+            "y": 108,
+            "width": 26,
+            "command": "exchangeUp-jpy:20_dollar",
+            "icons": [
+              { "x": -2, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:20_dollar" },
+              { "x": 10, "y": 6, "type": "lightmanscurrency:small_arrow", "direction": "RIGHT" },
+              { "x": 12, "y": 1, "type": "lightmanscurrency:item", "item": "jpy:100_dollar" }
+            ]
+          }
         ]
       }
     },
