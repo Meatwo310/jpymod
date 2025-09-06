@@ -6,6 +6,7 @@ import io.github.lightman314.lightmanscurrency.client.gui.screen.inventory.trade
 import io.github.lightman314.lightmanscurrency.client.util.ScreenArea;
 import io.github.meatwo310.jpymod.config.CommonConfig;
 import io.github.meatwo310.jpymod.config.ServerConfig;
+import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
 
 public class ForexLinkTab extends TradeRuleSubTab<ForexLink> {
@@ -22,12 +23,18 @@ public class ForexLinkTab extends TradeRuleSubTab<ForexLink> {
         if (this.getRule() == null) {
             return;
         }
-        gui.drawString("$1 = ¥%d (Price x%s)".formatted(
-                ServerConfig.FOREX_EXCHANGE_RATE.get(),
-                ServerConfig.FOREX_EXCHANGE_RATE.get() / 100.0
-        ), 10, 9, 0x404040);
-        if (CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()) {
-            gui.drawString("Alpha Vantage API enabled", 10, 20, 0x404040);
+
+        int rate = ServerConfig.FOREX_EXCHANGE_RATE.get();
+        gui.drawString(
+                Component.translatable("gui.jpy.trade_rule.forex_link.info", rate, rate / 100.0),
+                10, 9, 0x404040
+        );
+
+        if (!CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()) {
+            gui.drawString(
+                    Component.translatable("gui.jpy.trade_rule.forex_link.alpha_vantage"),
+                    10, 20, 0x404040
+            );
         }
     }
 }

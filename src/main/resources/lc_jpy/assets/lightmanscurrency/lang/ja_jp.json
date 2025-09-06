@@ -95,5 +95,11 @@
 
   "lightmanscurrency.money.chain.dollar": "ドル",
   "lightmanscurrency.money.chain.dollar.display": "$%s",
-  "lightmanscurrency.money.chain.dollar.display.wordy": "$%s"
+  "lightmanscurrency.money.chain.dollar.display.wordy": "$%s",
+
+  "traderule.jpy.forex_link": "為替リンク",
+  "traderule.jpy.forex_link.info": "$1=¥%s (価格 x%s)",
+  "traderule.jpy.forex_link.info.alpha_vantage": "$1=¥%s (価格 x%s) - Alpha Vantage API",
+  "gui.jpy.trade_rule.forex_link.info": "$1 = ¥%s (価格 x%s)",
+  "gui.jpy.trade_rule.forex_link.alpha_vantage": "Alpha Vantage APIが有効です"
 }

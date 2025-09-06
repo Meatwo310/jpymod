@@ -35,11 +35,11 @@ public class ForexLink extends PriceTweakingTradeRule {
 
     @Override
     public void beforeTrade(TradeEvent.PreTradeEvent event) {
-        event.addHelpful(Component.literal("$1=¥%d (Price x%s)%s".formatted(
-                ServerConfig.FOREX_EXCHANGE_RATE.get(),
-                ServerConfig.FOREX_EXCHANGE_RATE.get() / 100.0,
-                CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty() ? "" : " - Alpha Vantage API"
-        )));
+        int rate = ServerConfig.FOREX_EXCHANGE_RATE.get();
+        String key = CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()
+                ? "traderule.jpy.forex_link.info"
+                : "traderule.jpy.forex_link.info.alpha_vantage";
+        event.addHelpful(Component.translatable(key, rate, rate / 100.0));
     }
 
     @Override

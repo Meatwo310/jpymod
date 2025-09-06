@@ -64,18 +64,18 @@
   "item.lightmanscurrency.coin_chocolate_netherite": "チョコ味の500円玉",
   "item.lightmanscurrency.coin_chocolate_netherite.plural": "チョコ味の500円玉",
 
-  "item.lightmanscurrency.coin_copper": "1円玉",
-  "item.lightmanscurrency.coin_copper.plural": "1円玉",
-  "item.lightmanscurrency.coin_diamond": "100円玉",
-  "item.lightmanscurrency.coin_diamond.plural": "100円玉",
-  "item.lightmanscurrency.coin_emerald": "50円玉",
-  "item.lightmanscurrency.coin_emerald.plural": "50円玉",
-  "item.lightmanscurrency.coin_gold": "10円玉",
-  "item.lightmanscurrency.coin_gold.plural": "10円玉",
-  "item.lightmanscurrency.coin_iron": "5円玉",
-  "item.lightmanscurrency.coin_iron.plural": "5円玉",
-  "item.lightmanscurrency.coin_netherite": "500円玉",
-  "item.lightmanscurrency.coin_netherite.plural": "500円玉",
+  "item.lightmanscurrency.coin_copper": "1 Yen Coin",
+  "item.lightmanscurrency.coin_copper.plural": "1 Yen Coins",
+  "item.lightmanscurrency.coin_diamond": "100 Yen Coin",
+  "item.lightmanscurrency.coin_diamond.plural": "100 Yen Coins",
+  "item.lightmanscurrency.coin_emerald": "50 Yen Coin",
+  "item.lightmanscurrency.coin_emerald.plural": "50 Yen Coins",
+  "item.lightmanscurrency.coin_gold": "10 Yen Coin",
+  "item.lightmanscurrency.coin_gold.plural": "10 Yen Coins",
+  "item.lightmanscurrency.coin_iron": "5 Yen Coin",
+  "item.lightmanscurrency.coin_iron.plural": "5 Yen Coins",
+  "item.lightmanscurrency.coin_netherite": "500 Yen Coin",
+  "item.lightmanscurrency.coin_netherite.plural": "500 Yen Coins",
 
   "lightmanscurrency.money.chain.jpy": "JPY",
   "lightmanscurrency.money.chain.jpy.display": "%s yen",
@@ -92,5 +92,11 @@
 
   "lightmanscurrency.money.chain.dollar": "Dollar",
   "lightmanscurrency.money.chain.dollar.display": "$%s",
-  "lightmanscurrency.money.chain.dollar.display.wordy": "$%s"
+  "lightmanscurrency.money.chain.dollar.display.wordy": "$%s",
+
+  "traderule.jpy.forex_link": "Forex Link",
+  "traderule.jpy.forex_link.info": "$1=¥%s (Price x%s)",
+  "traderule.jpy.forex_link.info.alpha_vantage": "$1=¥%s (Price x%s) - Alpha Vantage API",
+  "gui.jpy.trade_rule.forex_link.info": "$1 = ¥%s (Price x%s)",
+  "gui.jpy.trade_rule.forex_link.alpha_vantage": "Alpha Vantage API enabled!"
 }
