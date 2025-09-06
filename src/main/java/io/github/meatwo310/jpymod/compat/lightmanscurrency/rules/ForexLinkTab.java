@@ -4,7 +4,6 @@ import io.github.lightman314.lightmanscurrency.api.misc.client.rendering.EasyGui
 import io.github.lightman314.lightmanscurrency.client.gui.screen.inventory.traderstorage.trade_rules.TradeRuleSubTab;
 import io.github.lightman314.lightmanscurrency.client.gui.screen.inventory.traderstorage.trade_rules.TradeRulesClientTab;
 import io.github.lightman314.lightmanscurrency.client.util.ScreenArea;
-import io.github.meatwo310.jpymod.config.CommonConfig;
 import io.github.meatwo310.jpymod.config.ServerConfig;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +29,7 @@ public class ForexLinkTab extends TradeRuleSubTab<ForexLink> {
                 10, 9, 0x404040
         );
 
-        if (!CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()) {
+        if (ServerConfig.FOREX_AUTO_UPDATE.get()) {
             gui.drawString(
                     Component.translatable("gui.jpy.trade_rule.forex_link.alpha_vantage"),
                     10, 20, 0x404040

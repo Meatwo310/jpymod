@@ -7,12 +7,16 @@ public class ServerConfig {
 
     public static final ForgeConfigSpec.IntValue FOREX_EXCHANGE_RATE = BUILDER
             .comment("The exchange rate from USD to JPY for the Forex Link trade rule.")
-            .comment("Set API key in common config to enable automatic updates.")
             .defineInRange("forexExchangeRate", 140, 1, 1000);
 
-    public static final ForgeConfigSpec.BooleanValue FOREX_REFRESH_ON_STARTUP = BUILDER
+    public static final ForgeConfigSpec.BooleanValue FOREX_AUTO_UPDATE = BUILDER
+            .comment("If true, the Forex exchange rate will be automatically updated every 2 hours.")
+            .comment("Requires a valid Alpha Vantage API key in the *common* config.")
+            .define("forexAutoUpdate", false);
+
+    public static final ForgeConfigSpec.BooleanValue FOREX_UPDATE_ON_STARTUP = BUILDER
             .comment("If true, the Forex exchange rate will be fetched from Alpha Vantage when the server starts.")
-            .define("forexRefreshOnStartup", false);
+            .define("forexUpdateOnStartup", false);
 
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 }

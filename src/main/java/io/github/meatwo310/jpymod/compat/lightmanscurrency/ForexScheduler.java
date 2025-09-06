@@ -63,9 +63,11 @@ public class ForexScheduler {
         long initialDelay = Duration.between(now, nextRunTime).toMillis();
 
         LOGGER.info("Scheduling Forex scheduler: fetch in {} min, then every 2 hours", TimeUnit.MILLISECONDS.toMinutes(initialDelay));
-        if (CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()) {
-            LOGGER.warn("No Alpha Vantage API key provided. See the common config!");
-        } else if (ServerConfig.FOREX_REFRESH_ON_STARTUP.get()) {
+        if (!ServerConfig.FOREX_AUTO_UPDATE.get()) {
+            LOGGER.info("Note: auto updating will be skipped. See the server config to enable it.");
+        } else if (CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()) {
+            LOGGER.error("No Alpha Vantage API key provided. See the *common* config!");
+        } else if (ServerConfig.FOREX_UPDATE_ON_STARTUP.get()) {
             LOGGER.info("Startup fetching!");
             run();
         }
@@ -95,7 +97,7 @@ public class ForexScheduler {
     private static void run() {
         LogicalSidedProvider.WORKQUEUE.get(LogicalSide.SERVER).execute(() -> {
             try {
-                if (CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()) {
+                if (CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty() || !ServerConfig.FOREX_AUTO_UPDATE.get()) {
                     return;
                 }
 
@@ -111,7 +113,7 @@ public class ForexScheduler {
                         .getAsString();
 
                 double rate = Double.parseDouble(exchangeRate);
-                LOGGER.info("Forex exchange rate: 1 USD = {} JPY", rate);
+                LOGGER.info("Fetched exchange rate: 1 USD = {} JPY", rate);
                 ServerConfig.FOREX_EXCHANGE_RATE.set((int) rate);
             } catch (Exception e) {
                 LOGGER.error(e.getMessage());

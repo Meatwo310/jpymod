@@ -11,7 +11,6 @@ import io.github.lightman314.lightmanscurrency.common.traders.rules.PriceTweakin
 import io.github.lightman314.lightmanscurrency.common.util.IconData;
 import io.github.lightman314.lightmanscurrency.common.util.IconUtil;
 import io.github.meatwo310.jpymod.JPYMod;
-import io.github.meatwo310.jpymod.config.CommonConfig;
 import io.github.meatwo310.jpymod.config.ServerConfig;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.ResourceLocationException;
@@ -36,9 +35,9 @@ public class ForexLink extends PriceTweakingTradeRule {
     @Override
     public void beforeTrade(TradeEvent.PreTradeEvent event) {
         int rate = ServerConfig.FOREX_EXCHANGE_RATE.get();
-        String key = CommonConfig.ALPHA_VANTAGE_API_KEY.get().isEmpty()
-                ? "traderule.jpy.forex_link.info"
-                : "traderule.jpy.forex_link.info.alpha_vantage";
+        String key = ServerConfig.FOREX_AUTO_UPDATE.get()
+                ? "traderule.jpy.forex_link.info.alpha_vantage"
+                : "traderule.jpy.forex_link.info";
         event.addHelpful(Component.translatable(key, rate, rate / 100.0));
     }
 
