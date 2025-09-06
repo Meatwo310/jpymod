@@ -8,7 +8,7 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<? extends String> ALPHA_VANTAGE_API_KEY = BUILDER
             .comment("Your Alpha Vantage API key for fetching real-time Forex data.")
             .comment("Refreshed every two hours if the key is provided.")
-            .comment("Leave blank to disable automatic exchange rate updates.")
+            .comment("Must be enabled in the *server* config.")
             .define("alphaVantageApiKey", "");
 
     public static final ForgeConfigSpec SPEC = BUILDER.build();
