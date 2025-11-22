@@ -3,13 +3,13 @@ package io.github.meatwo310.jpymod.compat.lightmanscurrency.rules;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import io.github.lightman314.lightmanscurrency.api.events.TradeEvent;
+import io.github.lightman314.lightmanscurrency.api.misc.icons.IconData;
+import io.github.lightman314.lightmanscurrency.api.misc.icons.IconUtil;
 import io.github.lightman314.lightmanscurrency.api.network.LazyPacketData;
 import io.github.lightman314.lightmanscurrency.api.traders.rules.TradeRuleType;
 import io.github.lightman314.lightmanscurrency.client.gui.screen.inventory.traderstorage.trade_rules.TradeRulesClientSubTab;
 import io.github.lightman314.lightmanscurrency.client.gui.screen.inventory.traderstorage.trade_rules.TradeRulesClientTab;
 import io.github.lightman314.lightmanscurrency.common.traders.rules.PriceTweakingTradeRule;
-import io.github.lightman314.lightmanscurrency.common.util.IconData;
-import io.github.lightman314.lightmanscurrency.common.util.IconUtil;
 import io.github.meatwo310.jpymod.JPYMod;
 import io.github.meatwo310.jpymod.config.ServerConfig;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -17,6 +17,7 @@ import net.minecraft.ResourceLocationException;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -83,7 +84,7 @@ public class ForexLink extends PriceTweakingTradeRule {
     }
 
     @Override
-    protected void handleUpdateMessage(LazyPacketData lazyPacketData) {
+    protected void handleUpdateMessage(Player player, LazyPacketData lazyPacketData) {
     }
 
     @Override

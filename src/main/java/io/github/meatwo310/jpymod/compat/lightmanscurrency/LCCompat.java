@@ -18,12 +18,16 @@ public class LCCompat {
     public static void onFMLCommonSetup(FMLCommonSetupEvent event) {
         if (ModList.get().isLoaded("lightmanscurrency")) {
             try {
-                TraderAPI.API.RegisterTradeRule(ForexLink.TYPE);
-                lcLoaded = true;
-            } catch (Exception e) {
+                register();
+            } catch (LinkageError | Exception e) {
                 LogUtils.getLogger().error(e.getMessage());
             }
         }
+    }
+
+    private static void register() {
+        TraderAPI.getApi().RegisterTradeRule(ForexLink.TYPE);
+        lcLoaded = true;
     }
 
     public static boolean isLCLoaded() {
