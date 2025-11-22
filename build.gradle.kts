@@ -26,7 +26,7 @@ object ModConfig {
     const val modId = "jpy"
     const val modName = "JPY"
     const val modLicense = "MIT"
-    const val modVersion = "1.4.1"
+    const val modVersion = "1.5.0"
     const val modGroupId = "io.github.meatwo310.jpy"
     const val modAuthors = "Meatwo310"
     const val modDescription = "Adds JPY items to Minecraft."
